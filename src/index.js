@@ -24,8 +24,8 @@ program
       const targetDir = path.resolve(target)
       const targetName = options.class ? options.class : 'Icon'
       const templateFile = options.template ? path.resolve(options.template) : path.join(process.cwd(), 'templates', 'default.js')
-      log('Starting svg-to-react-components', targetName)
-      log(sourceDir, targetDir)
+      log('Starting svg-to-react-components.')
+      log(`Converting SVGs from "${sourceDir}" to React Class "${targetName}.js" at "${targetDir}".`)
 
       globAsync(sourceFiles)
       .map(filePath => {
@@ -53,8 +53,8 @@ program
         const target = path.join(targetDir, `${targetName}.js`)
         return fs.writeFileAsync(target, result)
       })
-      .then((result) => {
-        console.log(result)
+      .then(() => {
+        log("Finished.")
       })
       .then(() => {
         process.exit(0)

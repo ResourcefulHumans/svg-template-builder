@@ -37,7 +37,7 @@ class <%= name %> extends Component {
 
 <%= name %>.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.string.isRequired
+  type: PropTypes.oneOf(iconList).isRequired
 }
 
 export default <%= name %>
