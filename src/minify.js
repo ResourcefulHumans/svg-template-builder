@@ -53,7 +53,7 @@ const minifier = new SVGO({
   ]
 })
 
-function minify(content) {
+function minify (content) {
   return new Promise(resolve => {
     minifier.optimize(content, result => resolve(result))
   })

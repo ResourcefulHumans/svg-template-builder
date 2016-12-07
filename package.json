@@ -1,13 +1,20 @@
 {
-  "name": "svg-to-react-components",
-  "version": "0.0.1",
-  "description": "Generates react components from svg files",
+  "name": "svg-template-builder",
+  "version": "0.0.2",
+  "description": "Aggregates and optimizes SVGs to render them into templates",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard"
   },
-  "author": "RH",
-  "license": "ISC",
+  "author": "Resourceful Humans <info@resourceful-humans.com>",
+  "keywords": [
+    "svg",
+    "template",
+    "generate",
+    "optimize"
+  ],
+  "license": "UNLICENSED",
   "bin": {
     "svg-to-react-components": "./src/index.js"
   },
@@ -17,5 +24,8 @@
     "glob": "^7.1.1",
     "lodash": "^4.17.2",
     "svgo": "github:strarsis/svgo#inlineStyles"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
   }
 }
