@@ -1,11 +1,12 @@
 {
   "name": "svg-template-builder",
-  "version": "0.0.2",
+  "version": "0.0.0-development",
   "description": "Aggregates and optimizes SVGs to render them into templates",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "standard"
+    "lint": "standard",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Resourceful Humans <info@resourceful-humans.com>",
   "keywords": [
@@ -14,7 +15,7 @@
     "generate",
     "optimize"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bin": {
     "svg-to-react-components": "./src/index.js"
   },
@@ -26,6 +27,11 @@
     "svgo": "github:strarsis/svgo#inlineStyles"
   },
   "devDependencies": {
-    "standard": "^8.6.0"
+    "standard": "^8.6.0",
+    "semantic-release": "^6.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ResourcefulHumans/svg-template-builder.git"
   }
 }
