@@ -9,12 +9,14 @@ const globAsync = Promise.promisify(require('glob'))
 const minify = require('./minify')
 const _template = require('lodash/template')
 const _forEach = require('lodash/forEach')
+const transform = require('./transform')
 
 program
   .command('build <source> <target>')
     .description('builds a react component based on all SVG\'s included in source')
     .option('-d, --debug', 'output debug information')
-    .option('-t, --template <file>', 'which template file to use (default: templates/default.js)')
+    .option('-r, --react', 'transform svg attributes to corresponding react attributes')
+    .option('-t, --template <file>', 'which template file to use (default: templates/example.tpl)')
     .option('-c, --class <name>', 'the class name of the component (default: Icon)')
     .action(
       (source, target, options) => {
@@ -33,9 +35,15 @@ program
             .then(fileContent => {
               return minify(fileContent)
             })
-            .then(svg => {
+            .then(fileContent => {
+              if (!options.react) {
+                return fileContent.data
+              }
+              return transform(fileContent.data)
+            })
+            .then(svgContent => {
               return {
-                content: svg.data,
+                content: svgContent,
                 name: path.basename(filePath, '.svg')
               }
             })
