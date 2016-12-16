@@ -4,8 +4,10 @@
   "description": "Aggregates and optimizes SVGs to render them into templates",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=testing mocha test",
     "lint": "standard",
+    "precommit": "npm run lint && npm test",
+    "commitmsg": "validate-commit-msg",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Resourceful Humans <info@resourceful-humans.com>",
@@ -27,8 +29,13 @@
     "svgo": "github:strarsis/svgo#inlineStyles"
   },
   "devDependencies": {
+    "bluebird": "^3.4.6",
+    "chai": "^3.5.0",
+    "husky": "^0.12.0",
+    "mocha": "^3.2.0",
+    "semantic-release": "^6.3.2",
     "standard": "^8.6.0",
-    "semantic-release": "^6.3.2"
+    "validate-commit-msg": "^2.8.2"
   },
   "repository": {
     "type": "git",
