@@ -1,10 +1,10 @@
 import React, { PropTypes, Component } from 'react'
 
 const iconList = [
-  <% _forEach(icons, function (icon) {%> '<%= icon.name %>', <% }) %>
+  <% _.forEach(icons, function (icon) {%> '<%= icon.name %>', <% }) %>
 ]
 
-class <%= name %> extends Component {
+class <%= label %> extends Component {
 
   constructor () {
     super()
@@ -15,7 +15,7 @@ class <%= name %> extends Component {
     switch (this.props.type) {
       default:
         return null;
-      <% _forEach(icons, function (icon) {%>
+      <% _.forEach(icons, function (icon) {%>
       case '<%= icon.name %>':
         return (
           <%= icon.content %>
@@ -35,9 +35,9 @@ class <%= name %> extends Component {
   }
 }
 
-<%= name %>.propTypes = {
+<%= label %>.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(iconList).isRequired
 }
 
-export default <%= name %>
+export default <%= label %>
