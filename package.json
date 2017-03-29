@@ -11,7 +11,7 @@
     "commitmsg": "validate-commit-msg",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "author": "Resourceful Humans <info@resourceful-humans.com>",
+  "author": "Resourceful Humans GmbH <info@resourceful-humans.com>",
   "keywords": [
     "svg",
     "template",
