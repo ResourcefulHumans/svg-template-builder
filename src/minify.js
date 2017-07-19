@@ -1,5 +1,4 @@
 const SVGO = require('svgo')
-const Promise = require('bluebird')
 const minifier = new SVGO({
   plugins: [
     // Keep unused plugin comments since order is important when re-enabling
@@ -54,9 +53,7 @@ const minifier = new SVGO({
 })
 
 function minify (content) {
-  return new Promise(resolve => {
-    minifier.optimize(content, result => resolve(result))
-  })
+  return minifier.optimize(content)
 }
 
 module.exports = minify
