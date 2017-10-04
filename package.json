@@ -30,7 +30,7 @@
     "svgo": "github:strarsis/svgo#inlineStyles"
   },
   "devDependencies": {
-    "bluebird": "^3.4.6",
+    "bluebird": "3.5.0",
     "chai": "^4.1.0",
     "codeclimate-test-reporter": "^0.5.0",
     "husky": "^0.14.3",
